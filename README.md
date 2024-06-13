@@ -1,5 +1,5 @@
 # JDBC
-How to do CRUD Operation using JDBC
+How to do Static CRUD Operation using JDBC
 ----
 
 ----
