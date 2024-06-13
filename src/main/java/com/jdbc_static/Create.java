@@ -28,7 +28,8 @@ public class Create
 		
 //		Step-4 : Execute the statement
 		
-		boolean b = state.execute("Insert into demo_table values (1,'Ben',7044322442) ");
+		boolean b = state.execute("Insert into demo_table values (2,'Gwen',8044322442) ");
+//		For Insertion we have to use abstract method execute() which return type is boolean, If the process is executed it will return false else throw errors 
 		
 //		Step-5 : Process the result
 		
