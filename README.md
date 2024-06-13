@@ -51,8 +51,9 @@ Write the codes.
 5 Process the Result <br>
 6 Close the Connection <br>
 
+---
 
-#### Details Regarding Steps To Connect
+#### Explanation Regarding Steps To Connect
 
 * **Load & Register the Driver**
 
@@ -103,7 +104,10 @@ These will return Statement Interface. <br>
  * For Fetching/Reading all the data -> ResultSet res = state.executeQuery("SELECT * FROM table_name ");
  * For Fetching/Reading by seletion -> ResultSet res =  state.executeQuery("SELECT * FROM table_name WHERE id = ?");
  * For Updating ->  int row = state.executeUpdate("UPDATE table_name SET key = 'value'where id = ? ");
-* For Deleting -> int rows = state.executeUpdate("DELETE FROM table_name WHERE id = ?");
+* For Deleting -> int rows = state.executeUpdate("DELETE FROM table_name WHERE id = ?"); <br>
+
+
+
  
 * **Process the Result**
 
@@ -134,5 +138,20 @@ while(res.next())
 For closing the connection we have abstrat method **close()**.<br>
 After completion of the program all the connection need to be closed because connection plays an important role for transferring the data, retrieving the data as it is costlier resource.
 
+---
 
+### Demonstration of the way to Connect
 
+Class.forName("com.cj.mysql.jdbc.Driver");
+
+Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbc_static", "root", "****");
+
+Statement state = con.createStatement();
+
+boolean b = state.execute("Insert into demo_table values (1,'Ben',8044322442) ");
+
+System.out.println(b);
+		
+state.close();
+
+con.close();
