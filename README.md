@@ -1,4 +1,4 @@
-# JDBC
+# JDBC Static CRUD Operation
 How to do Static CRUD Operation using JDBC
 ----
 
@@ -44,12 +44,12 @@ Write the codes.
 ### Steps To Connect To The Database & Writing The Codes
 
 
-1 Load & Register the Driver <br>
-2 Establish the Connection <br>
-3 Create a Statement <br>
-4 Execute the Statement <br>
-5 Process the Result <br>
-6 Close the Connection <br>
+1. Load & Register the Driver <br>
+2. Establish the Connection <br>
+3. Create a Statement <br>
+4. Execute the Statement <br>
+5. Process the Result <br>
+6. Close the Connection <br>
 
 ---
 
@@ -127,8 +127,8 @@ while(res.next())
 			System.out.println(res.getString(3));
 		}
 
-* For Updating -> It will give integer value, i.e. how many rows is effected.
-* For Deleting ->It will give integer value, i.e. how many rows is effected.
+* For Updating -> It will give integer value, i.e. 1 or 0 , if the program execution done it will give output as 1 , if the execution fails it will give output as 0. 
+* For Deleting ->It will give integer value, i.e. 1 or 0 , if the program execution done it will give output as 1 , if the execution fails it will give output as 0. 
 
 
 * **Close the Connection**
@@ -148,9 +148,9 @@ Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbc_s
 
 Statement state = con.createStatement();
 
-boolean b = state.execute("Insert into demo_table values (1,'Ben',8044322442) ");
+boolean result = state.execute("Insert into demo_table values (1,'Ben',8044322442) ");
 
-System.out.println(b);
+System.out.println(result);
 		
 state.close();
 
